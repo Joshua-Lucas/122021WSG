@@ -1,15 +1,28 @@
 import React from 'react';
-import { useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { ThemeProvider } from 'styled-components';
+import { Theme } from '../assets/designSystem/Theme.js';
+
+import HomePage from '../components/pages/HomePage.jsx';
+import ConcertPage from './pages/ConcertPage.jsx';
+import Layout from './layout/Layout.jsx';
+import { GlobalStyles } from '../assets/designSystem/GlobalStyles.js';
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <div className="background">
-      <p>{count}</p>
-      <button onClick={() => setCount(count + 1)}>Increment</button>
-      <button onClick={() => setCount(count - 1)}>Decrement</button>
-    </div>
+    <>
+      <BrowserRouter>
+        <ThemeProvider theme={Theme}>
+          <GlobalStyles />
+          <Layout>
+            <Routes>
+              <Route path="/concerts" element={<ConcertPage />} />
+              <Route path="/" element={<HomePage />} />
+            </Routes>
+          </Layout>
+        </ThemeProvider>
+      </BrowserRouter>
+    </>
   );
 }
 
