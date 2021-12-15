@@ -7,6 +7,7 @@ import HomePage from '../components/pages/HomePage.jsx';
 import ConcertPage from './pages/ConcertPage.jsx';
 import Layout from './layout/Layout.jsx';
 import { GlobalStyles } from '../assets/designSystem/GlobalStyles.js';
+import SportPage from './pages/SportPage.jsx';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <GlobalStyles />
           <Layout>
             <Routes>
+              <Route path="/sports" element={<SportPage />} />
               <Route path="/concerts" element={<ConcertPage />} />
               <Route path="/" element={<HomePage />} />
             </Routes>
