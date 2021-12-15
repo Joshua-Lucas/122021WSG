@@ -42,20 +42,7 @@ export const SearchInputBar = styled.input`
   font-size: 1rem;
   outline: none;
   @media ${devices.laptop} {
-    width: 55%;
-  }
-`;
-
-export const SearchFilterBar = styled.input`
-  display: none;
-  @media ${devices.laptop} {
-    display: block;
-    width: 30%;
-    padding: 1rem 0.5rem;
-    border: 0;
-    font-size: 1rem;
-    outline: none;
-    border-left: 1px solid lightgrey;
+    width: 85%;
   }
 `;
 

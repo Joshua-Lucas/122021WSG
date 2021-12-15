@@ -4,7 +4,6 @@ import {
   SearchBarContainer,
   SearchBarElement,
   SearchBarLabel,
-  SearchFilterBar,
   SearchInputBar,
   SearchButton,
   SearchSvg,
@@ -13,10 +12,9 @@ import {
 
 function SearchBar({
   onSubmitEvent,
-  filterInput,
+
   searchInput,
   updateSearchInput,
-  updateFilterInput,
 }) {
   const [isSearching, setIsSearching] = useState(false);
 
@@ -39,7 +37,7 @@ function SearchBar({
             id="searchInput"
             type="text"
             name="searchInput"
-            placeholder="Search Artist, Teams, and Events"
+            placeholder="Search Artist, Team, or Location"
             value={searchInput}
             onChange={(e) => handleSearchEvent(e)}
           />
@@ -49,16 +47,6 @@ function SearchBar({
               onClick={clearSearch}
             />
           ) : null}
-
-          <SearchBarLabel htmlFor="filterInput">Filter Field</SearchBarLabel>
-          <SearchFilterBar
-            id="filterInput"
-            type="text"
-            name="filterInput"
-            placeholder="City"
-            value={filterInput}
-            onChange={(e) => updateFilterInput(e.target.value)}
-          />
 
           <SearchButton id="searchSubmit" type="submit">
             Search
