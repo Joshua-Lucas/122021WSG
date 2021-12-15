@@ -19,6 +19,7 @@ export const LogoContainer = styled.div`
   svg {
     width: 10rem;
     height: 6rem;
+    padding: 0.5rem 0;
   }
 `;
 
