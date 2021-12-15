@@ -1,0 +1,21 @@
+{
+  "name": "122021wsg",
+  "version": "1.0.0",
+  "description": "This is a basic event search application that allows you to search for tickets you can purchase. The technologies used are React, node.js and Express.js",
+  "main": "index.js",
+  "scripts": {
+    "install:app": "npm --prefix ./frontend install && npm --prefix ./backend install",
+    "start:app": "npm --prefix ./frontend run build && npm --prefix ./backend run start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Joshua-Lucas/122021WSG.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Joshua-Lucas/122021WSG/issues"
+  },
+  "homepage": "https://github.com/Joshua-Lucas/122021WSG#readme"
+}
