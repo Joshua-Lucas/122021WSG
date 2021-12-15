@@ -1,6 +1,6 @@
 # WSG122021
 
-This is a React application that is severed from an an Express.js server
+This is a basic event search application that allows you to search for tickets you can purchase. The technologies used are React, node.js and Express.js 
 
 ## How to Run Locally
 
@@ -26,4 +26,4 @@ make -j2 run
 Finally, navigate to [http://localhost:3000](http://localhost:3000) in your browser. 
 
 
-## Overview of the App
+
