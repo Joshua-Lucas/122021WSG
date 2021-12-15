@@ -36,7 +36,7 @@ function EventCard({
           <DayOfWeek>
             {formatDayOfWeekAbbreviations(getDay(startDate))}
           </DayOfWeek>
-          <DayOfMonth>{startDate.getDate()}</DayOfMonth>
+          <DayOfMonth>{startDate.getDate().toString()}</DayOfMonth>
         </DateContainer>
         <DetailsContainer>
           <FeaturedTag>{`${formatMonth(
@@ -48,7 +48,9 @@ function EventCard({
           <EventVenue>{venue}</EventVenue>
           <p>{location}</p>
           <EventDetails>{details}</EventDetails>
-          <EventLink to={linkHref}>Learn More</EventLink>
+          <EventLink target="_blank" href={linkHref}>
+            Buy Tickets
+          </EventLink>
         </DetailsContainer>
         <ImageContainer>
           <EventImage alt={imgAlt} src={imgSrc} />

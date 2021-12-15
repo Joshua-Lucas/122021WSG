@@ -36,7 +36,7 @@ export const NavDropdown = styled.div`
 `;
 
 export const NavContainer = styled.nav`
-  height: 55vh;
+  height: 100vh;
   width: 100vw;
   background-color: ${({ theme }) => theme.colors.primary};
   z-index: 50;

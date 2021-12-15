@@ -4,7 +4,6 @@ import {
   LogoContainer,
   NavDropdown,
   NavContainer,
-  NavLink,
 } from './NavigationBar.styles.js';
 import MenuBar from './MenuBar.jsx';
 import Logo from './Logo.jsx';
@@ -24,7 +23,6 @@ function NavigationBar() {
           <NavigationLink href="/" linkTitle="Home" />
           <NavigationLink href="/concerts" linkTitle="Concerts" />
           <NavigationLink href="/sports" linkTitle="Sports" />
-          <NavigationLink href="/art" linkTitle="Art" />
         </NavContainer>
       </NavDropdown>
     </NavBarContainer>

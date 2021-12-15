@@ -8,9 +8,9 @@ import {
   SearchedErrorContainer,
   SearchedMessage,
   SearchedMessageContainer,
-} from './ConcertPage.styles.js';
+} from './SportPage.styles.js';
 
-function ConcertPage() {
+function SportPage() {
   const [search, setSearch] = useState('');
   const [filterBy, setFilterBy] = useState('');
   const [searchedFor, setSearchedFor] = useState('');
@@ -33,7 +33,7 @@ function ConcertPage() {
     try {
       setSearchError(false);
       var date = formatISO(new Date());
-      let url = `https://app.ticketmaster.com/discovery/v2/events?apikey=CGf9czqqGto8ib1RdimWIvBgh9paU4hB&keyword=${search}&locale=*&startDateTime=${date}&sort=date,asc&segmentName=music`;
+      let url = `https://app.ticketmaster.com/discovery/v2/events?apikey=CGf9czqqGto8ib1RdimWIvBgh9paU4hB&keyword=${search}&locale=*&startDateTime=${date}&sort=date,asc&segmentName=sports`;
       let response = await fetch(url);
       let resData = await response.json();
 
@@ -102,4 +102,4 @@ function ConcertPage() {
   );
 }
 
-export default ConcertPage;
+export default SportPage;
