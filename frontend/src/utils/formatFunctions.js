@@ -1,22 +1,22 @@
 /**THIS FUNCTION TAKES A NUMBER VALUE 0 BEING SUNDAY AND THEN RETURNS THE DAY OF THE WEEK THAT MATCHES */
 export function formatDayOfWeekAbbreviations(day) {
-  switch (day) {
-    case 0:
+  switch (day.toString()) {
+    case '0':
       return 'sun';
-    case 1:
+    case '1':
       return 'mon';
-    case 2:
+    case '2':
       return 'tues';
-    case 3:
+    case '3':
       return 'wed';
-    case 4:
+    case '4':
       return 'thur';
-    case 5:
+    case '5':
       return 'fri';
-    case 6:
+    case '6':
       return 'sat';
     default:
-      return day;
+      return 'TBD';
   }
 }
 
