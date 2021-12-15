@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 import { lighten } from 'polished';
 import { devices } from '../../../assets/designSystem/breakPoints';
 
@@ -27,10 +26,11 @@ export const DateContainer = styled.div`
   border-bottom: 4px solid blue;
   margin: 0.5rem 0;
   @media ${devices.laptop} {
-    width:100%
-    align-text: left;
+    width: 10%;
+    align-items: end;
     border-bottom: 0;
     border-right: 4px solid blue;
+    padding-right: 2rem;
   }
 `;
 
@@ -49,8 +49,10 @@ export const DetailsContainer = styled.div`
   padding: 0.5rem 0;
   order: 3;
   @media ${devices.laptop} {
+    width: 53%;
     padding: 0 2rem;
     order: 2;
+    flex: 2;
   }
 `;
 
@@ -81,7 +83,7 @@ export const EventDetails = styled.p`
   }
 `;
 
-export const EventLink = styled(Link)`
+export const EventLink = styled.a`
   display: inline-block;
   width: 100%;
   margin: 1rem 0;
@@ -107,6 +109,7 @@ export const ImageContainer = styled.figure`
   overflow: hidden;
   @media ${devices.laptop} {
     order: 3;
+    width: 40%;
   }
 `;
 
