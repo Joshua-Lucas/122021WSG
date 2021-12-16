@@ -9,6 +9,7 @@ import {
   SearchedMessage,
   SearchedMessageContainer,
 } from './SportPage.styles.js';
+import { handleUndefinedData } from '../../utils/exceptionFunctions.js';
 
 function SportPage() {
   const [search, setSearch] = useState('');
@@ -76,17 +77,18 @@ function SportPage() {
 
       {!searchError ? (
         results.map((ev) => {
+          let newEvent = handleUndefinedData(ev);
           return (
             <EventCard
-              key={ev.id}
-              startDate={new Date(ev.dates.start.dateTime)}
-              title={ev.name}
-              venue={ev._embedded.venues[0].name}
-              location={ev._embedded.venues[0].city.name}
-              details={ev.pleaseNote}
-              imgSrc={ev.images[1].url}
-              linkHref={ev.url}
-              imgAlt={ev.name}
+              key={newEvent.id}
+              startDate={new Date(newEvent.dates.start.dateTime)}
+              title={newEvent.name}
+              venue={newEvent._embedded.venues[0].name}
+              location={newEvent._embedded.venues[0].city.name}
+              details={newEvent.pleaseNote}
+              imgSrc={newEvent.images[1].url}
+              linkHref={newEvent.url}
+              imgAlt={newEvent.name}
             />
           );
         })

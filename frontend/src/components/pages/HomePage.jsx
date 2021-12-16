@@ -10,6 +10,8 @@ import {
   SearchedMessageContainer,
 } from './HomePage.styles.js';
 
+import { handleUndefinedData } from '../../utils/exceptionFunctions.js';
+
 function HomePage() {
   const [search, setSearch] = useState('');
   const [filterBy, setFilterBy] = useState('');
@@ -33,6 +35,7 @@ function HomePage() {
     try {
       setSearchError(false);
       var date = formatISO(new Date());
+
       let url = `https://app.ticketmaster.com/discovery/v2/events?apikey=CGf9czqqGto8ib1RdimWIvBgh9paU4hB&keyword=${search}&locale=*&startDateTime=${date}&sort=date,asc`;
       let response = await fetch(url);
       let resData = await response.json();
@@ -76,17 +79,27 @@ function HomePage() {
 
       {!searchError ? (
         results.map((ev) => {
+          let newEvent = handleUndefinedData(ev);
+
           return (
             <EventCard
-              key={ev.id}
-              startDate={new Date(ev.dates.start.dateTime)}
-              title={ev.name}
-              venue={ev._embedded.venues[0].name}
-              location={ev._embedded.venues[0].city.name}
-              details={ev.pleaseNote}
-              imgSrc={ev.images[1].url}
-              linkHref={ev.url}
-              imgAlt={ev.name}
+              key={newEvent.id}
+              startDate={new Date(newEvent.dates.start.dateTime)}
+              title={newEvent.name}
+              venue={
+                newEvent._embedded.venues[0].name == undefined
+                  ? 'TBA'
+                  : newEvent._embedded.venues[0].name
+              }
+              location={
+                newEvent._embedded.venues[0].city.name == undefined
+                  ? 'TBA'
+                  : newEvent._embedded.venues[0].city.name
+              }
+              details={newEvent.pleaseNote}
+              imgSrc={newEvent.images[1].url}
+              linkHref={newEvent.url}
+              imgAlt={newEvent.name}
             />
           );
         })
