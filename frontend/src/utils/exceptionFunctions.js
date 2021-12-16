@@ -34,6 +34,5 @@ export function handleUndefinedData(data) {
     data.name = 'TBA';
   }
 
-  console.log(data);
   return data;
 }
