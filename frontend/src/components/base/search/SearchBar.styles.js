@@ -72,6 +72,6 @@ export const ClearSearchSvg = styled(XIcon)`
     color: gray;
   }
   @media ${devices.laptop} {
-    display: none;
+    margin-right: 2rem;
   }
 `;
