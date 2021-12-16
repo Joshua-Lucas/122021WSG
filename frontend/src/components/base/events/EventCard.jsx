@@ -41,7 +41,7 @@ function EventCard({
         <DetailsContainer>
           <FeaturedTag>{`${formatMonth(
             startDate.getMonth()
-          )} ${startDate.getDay()}@ ${getHours(startDate)}:${getMinutes(
+          )} ${startDate.getDate()} @ ${getHours(startDate)}:${getMinutes(
             startDate
           )}`}</FeaturedTag>
           <EventTitle>{title}</EventTitle>
